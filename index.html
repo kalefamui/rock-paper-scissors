@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Let's Play</title>
+    </head>
+    <body>
+        <script>
+            var start = prompt("Let's play a little bit? <yes> or <no>");
+
+            if (start == "no" || start == null) {
+                alert("That's sad! Maybe next time. Bye!");
+            } else {
+                var UserAnswer = prompt("What do you want to choose: Rock, Paper or Scissors?");
+
+                var PCAnswer=Math.random();
+                if (PCAnswer < 0.34){
+                    PCAnswer = "rock";
+                } else if (PCAnswer <= 0.67){
+                    PCAnswer = "scissors"
+                } else{
+                    PCAnswer = "paper"
+                }
+
+                var result = function(choice1,choice2){
+                    if (choice1 === choice2){
+                        return "It's a tie"
+                    }
+                    if (choice1 == "rock"){
+                        if (choice2 == "paper") {
+                            return "You won!"
+                        } else {
+                            return "You lose!"                            
+                        }
+                    }
+                    if (choice1 == "paper"){
+                        if (choice2 == "scissors") {
+                            return "You won!"
+                        } else {
+                            return "You lose!"
+                        }
+                    }
+                    if (choice1 == "scissors"){
+                        if (choice2 == "rock") {
+                            return "You won!"
+                        } else {
+                            return "You lose!"
+                        }
+                    }
+                }
+
+                var FinalResult = result(PCAnswer,UserAnswer);
+
+                alert(FinalResult);
+            }
+        </script>
+    </body>
+</html>
